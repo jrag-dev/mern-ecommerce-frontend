@@ -1,0 +1,18 @@
+:root {
+  --dark: #242424;
+  --darklight: #404040;
+  --red: #e63946;
+  --redlight: #ff5177;
+  --green: #2a9d8f;
+  --darkblue: #14213d;
+  --darkbluelight: #1f325a;
+  --darkamazon: #232F3E;
+  --white: #FFFFFF;
+  --yellow: #fca311;
+  --yellow🧮light: #ffbe0b;
+  --gray: #bcb8b1;
+  --graylight: #fafafa;
+  --purple: #551A8B;
+
+  --font: 'Roboto', sans-serif;
+}
