@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import RatingComponent from './RatingComponent'
 
 
 const ProductComponent = ({ product }) => {
@@ -15,6 +16,10 @@ const ProductComponent = ({ product }) => {
           <p className="product-card__name">{product.name}</p>
         </Link>
         <div className="row">
+          <RatingComponent
+            rating={product.rating}
+            numReviews={product.numReviews}
+          />
           <p className="product-card__reviews">{product.numReviews} reviews</p>
         </div>
         <p className="product-card__price">

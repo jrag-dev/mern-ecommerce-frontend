@@ -24,6 +24,13 @@ body {
   margin: 0 auto;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
 img {
   max-width: 100%;
 }
@@ -158,6 +165,21 @@ footer {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.product-card__reviews {
+  color: var(--yellow);
+  font-size: 1rem;
+}
+
+.product-card__price {
+  font-size: 1.2rem;
+  padding-top: .2rem;
+  padding-bottom: .8rem;
+}
+
+.rating {
+  margin: .5rem 0;
+  color: var(--yellow);
+}
 
 
 
