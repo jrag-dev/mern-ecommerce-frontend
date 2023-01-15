@@ -1,14 +1,29 @@
 import React from 'react'
 import HeaderComponent from '../components/HeaderComponent';
 
+import data from '../data';
+import ProductComponent from '../components/ProductComponent';
+
 const LayoutPublic = () => {
   return (
     <>
       <HeaderComponent/>
-      <main>
-        main
+      <main className="container">
+        <h1>Productos Destacados</h1>
+
+        <section className="products">
+          {
+            data.products.map(product => (
+              <ProductComponent
+                key={product.slug}
+                product={product}
+              />
+            ))
+          }
+        </section>
+
       </main>
-      <footer>
+      <footer className="container">
         footer
       </footer>
     </>
