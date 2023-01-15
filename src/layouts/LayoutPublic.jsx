@@ -1,32 +1,22 @@
 import React from 'react'
 import HeaderComponent from '../components/HeaderComponent';
 
-import data from '../data';
-import ProductComponent from '../components/ProductComponent';
+
+import { Outlet } from 'react-router-dom';
 
 const LayoutPublic = () => {
   return (
-    <>
+    <section className="app">
       <HeaderComponent/>
-      <main className="container">
-        <h1>Productos Destacados</h1>
-
-        <section className="products">
-          {
-            data.products.map(product => (
-              <ProductComponent
-                key={product.slug}
-                product={product}
-              />
-            ))
-          }
-        </section>
-
+      <main className="main container">
+        <Outlet/>
       </main>
-      <footer className="container">
-        footer
+      <footer className="footer">
+        <div className="container">
+          footer
+        </div>
       </footer>
-    </>
+    </section>
   )
 }
 
