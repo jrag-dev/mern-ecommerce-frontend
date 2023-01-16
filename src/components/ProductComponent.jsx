@@ -8,7 +8,7 @@ const ProductComponent = ({ product }) => {
     <article className="product-card" key={product.slug}>
 
       <Link to={`/product/slug/${product.slug}`} className="product-card__img">
-        <img src={product.image}alt={product.name}/>
+        <img src={product.image} alt={product.name}/>
       </Link>
 
       <div className="product-card__body">

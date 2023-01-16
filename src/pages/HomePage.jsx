@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import ProductComponent from '../components/ProductComponent';
 import { useContext } from 'react';
 import ProductsContext from '../context/products/productsContext';
+import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
 
@@ -15,8 +16,11 @@ const HomePage = () => {
 
   return (
     <article>
+      <Helmet>
+      <title>Mern-Ecommerce | Productos</title>
+      </Helmet>
 
-      { !loading && <h1>Productos Destacados</h1> }
+      { !loading && <h2 className='titulo'>Productos destacados</h2> }
 
       <section className="products">
         {

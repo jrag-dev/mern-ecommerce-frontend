@@ -48,17 +48,17 @@ const HeaderComponent = () => {
           </div>
 
           <div className="secondary full">
-            <NavLink to="/">Productos</NavLink>
-            <NavLink to="/signup">Sign up</NavLink>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/">Perfil</NavLink>
+            <NavLink to="/signup">Mis Ordenes</NavLink>
+            <NavLink to="/login">Cerrar Sesión</NavLink>
           </div>
 
           <div className="secondary mini">
             <Link to="#" className="more">Más</Link>
             <div className="submenu">
-              <NavLink to="/search">Search</NavLink>
-              <NavLink to="/signup">Sign up</NavLink>
-              <NavLink to="/login">Login</NavLink>
+            <NavLink to="/">Perfil</NavLink>
+            <NavLink to="/signup">Mis Ordenes</NavLink>
+            <NavLink to="/login">Cerrar Sesión</NavLink>
             </div>
           </div>
 

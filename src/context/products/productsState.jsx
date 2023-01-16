@@ -6,7 +6,10 @@ import clienteAxios from '../../config/axios';
 import { 
   OBTENER_PRODUCTS,
   OBTENER_PRODUCTS_SUCCESS,
-  OBTENER_PRODUCTS_ERROR
+  OBTENER_PRODUCTS_ERROR,
+  OBTENER_PRODUCT_SUCCESS,
+  OBTENER_PRODUCT,
+  OBTENER_PRODUCT_ERROR
 } from '../../types';
 
 
@@ -14,6 +17,7 @@ const ProductsState = ({ children }) => {
 
   const initialState = {
     products: [],
+    product: null,
     loading: false,
     error: false,
   }
@@ -44,12 +48,34 @@ const ProductsState = ({ children }) => {
     }
   }
 
+  const obtenerProductoFn = async (slug) => {
+    dispatch({
+      type: OBTENER_PRODUCT
+    })
+    try {
+      const respuesta = await clienteAxios.get(`/products/slug/${slug}`)
+      console.log(respuesta.data)
+      dispatch({
+        type: OBTENER_PRODUCT_SUCCESS,
+        payload: respuesta.data
+      })
+    } catch (error) {
+      console.log(error)
+      dispatch({
+        type: OBTENER_PRODUCT_ERROR,
+        payload: true
+      })
+    }
+  }
+
 
   const datos = {
     products: state.products,
+    product: state.product,
     loading: state.loading,
     error: state.error,
-    obtenerProductosFn
+    obtenerProductosFn,
+    obtenerProductoFn
   }
 
 
