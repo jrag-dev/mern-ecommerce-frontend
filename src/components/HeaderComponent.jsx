@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { HiMenu } from "react-icons/hi";
 
 import '../styles/components/HeaderComponent.css';
 import { Link, NavLink } from 'react-router-dom';
+import CartContext from '../context/cart/cartContext';
+import AuthContext from '../context/auth/authContext';
 
 const HeaderComponent = () => {
 
+  const { cart } = useContext(CartContext);
+  const { user, signoutFn } = useContext(AuthContext)
+
   const [openMenu, setOpenMenu] = useState(false);
+
+
+  const signoutHandler = () => {
+    signoutFn()
+    window.location.href = '/signin';
+  }
 
   const handlerClickMenu = () => {
     setOpenMenu(!openMenu);
   }
+
 
   return (
     <header className="header">
@@ -30,8 +42,7 @@ const HeaderComponent = () => {
           </div>
           <div className={`links ${openMenu ? 'collapsed' : null}`}>
               <NavLink to="/">Productos</NavLink>
-              <NavLink to="/">Carrito</NavLink>
-              <NavLink to="/">Logout</NavLink>
+              <NavLink to="/cart">Carrito</NavLink>
           </div>
         </div>
 
@@ -43,21 +54,36 @@ const HeaderComponent = () => {
 
           <div className="primary">
             <NavLink to="/">Productos</NavLink>
-            <NavLink to="/">Carrito</NavLink>
+            <NavLink to="/cart">
+            { 
+                  cart.cartItems.length > 0 
+                  ? (
+                    <div className="cart__numbers">
+                      {cart.cartItems.reduce((acc, item) => acc + item.cantidad, 0)}
+                    </div>
+                  )
+                  : null
+                }
+            </NavLink>
             <NavLink to="/">Logout</NavLink>
           </div>
 
           <div className="secondary full">
-            <NavLink to="/">Perfil</NavLink>
-            <NavLink to="/signup">Mis Ordenes</NavLink>
-            <NavLink to="/login">Cerrar Sesión</NavLink>
+            <NavLink to="/profile">Perfil</NavLink>
+            <NavLink to="/orderhistory">Mis Ordenes</NavLink>
+            <NavLink to="#signout" onClick={signoutHandler}>Cerrar Sesión</NavLink>
+            {
+              user && (
+                <NavLink to="/">Usuario: {user.name.split(' ')[0]}</NavLink>
+              )
+            }
           </div>
 
           <div className="secondary mini">
             <Link to="#" className="more">Más</Link>
             <div className="submenu">
-            <NavLink to="/">Perfil</NavLink>
-            <NavLink to="/signup">Mis Ordenes</NavLink>
+            <NavLink to="/profile">Perfil</NavLink>
+            <NavLink to="/orderhistory">Mis Ordenes</NavLink>
             <NavLink to="/login">Cerrar Sesión</NavLink>
             </div>
           </div>

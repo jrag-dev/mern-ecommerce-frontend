@@ -11,13 +11,15 @@ import {
   OBTENER_PRODUCT,
   OBTENER_PRODUCT_ERROR
 } from '../../types';
+import { getError } from '../../utils/utils';
 
 
 const ProductsState = ({ children }) => {
 
   const initialState = {
     products: [],
-    product: null,
+    categories: [],
+    product: {},
     loading: false,
     error: false,
   }
@@ -43,7 +45,7 @@ const ProductsState = ({ children }) => {
       console.log(error)
       dispatch({
         type: OBTENER_PRODUCTS_ERROR,
-        payload: true
+        payload: getError(error)
       })
     }
   }
@@ -63,7 +65,7 @@ const ProductsState = ({ children }) => {
       console.log(error)
       dispatch({
         type: OBTENER_PRODUCT_ERROR,
-        payload: true
+        payload: getError(error)
       })
     }
   }

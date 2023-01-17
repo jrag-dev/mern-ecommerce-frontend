@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+
+import CartContext from '../context/cart/cartContext'
+
 import RatingComponent from './RatingComponent'
+import CartButtonComponent from '../components/CartButtonComponent'
+
 
 
 const ProductComponent = ({ product }) => {
+
+  const { agregarItemCart } = useContext(CartContext)
+
   return (
     <article className="product-card" key={product.slug}>
 
@@ -25,9 +33,17 @@ const ProductComponent = ({ product }) => {
         <p className="product-card__price">
           <strong>${product.price}</strong>
         </p>
-        <button className="product-card__button">
-          Añadir al carrito
-        </button>
+        {
+          product.countInStock === 0 
+          ? <p className="product__nodisponible">No disponible</p>
+          : (
+            <div className="product__card">
+              <CartButtonComponent
+                producto={product}
+              />
+            </div>
+          )
+        }
       </div>
 
 

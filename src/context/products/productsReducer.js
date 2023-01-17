@@ -17,7 +17,8 @@ export default (state, action) => {
     case OBTENER_PRODUCTS_SUCCESS:
       return {
         ...state,
-        products: action.payload,
+        products: action.payload.products,
+        categories: action.payload.categories,
         loading: false,
         error: false
       }
@@ -35,5 +36,7 @@ export default (state, action) => {
         loading: false,
         error: false
       }
+    default:
+      return state;
   }
 }

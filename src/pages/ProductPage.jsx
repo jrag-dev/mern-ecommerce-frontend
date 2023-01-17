@@ -10,6 +10,8 @@ const ProductPage = () => {
   const { slug } = useParams();
   const { product, loading, error, obtenerProductoFn } = useContext(ProductsContext);
 
+  console.log(product);
+
   const [cantidad, setCantidad] = useState(1)
 
   useEffect(() => {
@@ -18,7 +20,7 @@ const ProductPage = () => {
 
   let cantidadCountInStock = [];
 
-  for (let i = 0; i < product?.countInStock; i++) {
+  for (let i = 0; i < product.countInStock; i++) {
     cantidadCountInStock.push(i)
   }
 
@@ -37,9 +39,9 @@ const ProductPage = () => {
 
       {
         loading ? (
-          <div>Loading...</div>
+          <div className="loading">Loading...</div>
         ): error ? (
-          <div>Error</div>
+          <div className="error">{error}</div>
         ) : (
           product && (
             <div className="product-detalles">
