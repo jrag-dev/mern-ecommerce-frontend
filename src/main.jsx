@@ -10,6 +10,8 @@ import { RouterProvider } from 'react-router-dom';
 import ProductsState from './context/products/productsState';
 import CartState from './context/cart/cartState';
 import AuthState from './context/auth/authState'
+import OrdersState from './context/orders/ordersState';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -18,7 +20,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <AuthState>
         <ProductsState>
           <CartState>
-            <RouterProvider router={router} />
+            <OrdersState>
+              <PayPalScriptProvider deferLoading={true}>
+                <RouterProvider router={router} />
+              </PayPalScriptProvider>
+            </OrdersState>
           </CartState>
         </ProductsState>
       </AuthState>

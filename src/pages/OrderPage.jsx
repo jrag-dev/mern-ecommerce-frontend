@@ -7,7 +7,6 @@ import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import LoaderComponent from '../components/LoaderComponent';
 import AuthContext from '../context/auth/authContext';
 import OrdersContext from '../context/orders/ordersContext';
-import clienteAxios from '../config/axios';
 
 const OrderPage = () => {
 
@@ -25,6 +24,7 @@ const OrderPage = () => {
     }
 
     if (!order._id || successPay || (order._id && order._id !== id)) {
+      console.log('You must', token)
       getOrder(id, token)
     } else {
 
@@ -33,7 +33,6 @@ const OrderPage = () => {
       }
 
       obtenerClienteId(token)
-      console.log('aun no existe cliente-id')
 
       if (clienteId) {
 
