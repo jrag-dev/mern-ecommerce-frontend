@@ -52,7 +52,12 @@ body {
   color: var(--white);
 }
 
-
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: .3rem;
+  align-items: center;
+}
 
 img {
   max-width: 100%;
@@ -483,7 +488,7 @@ footer {
 }
 
 .cart__total {
-  background-color: var(--gray);
+  background-color: var(--graylight);
   padding: 1.5rem 1rem;
   border: 1px solid var(--gray);
   width: 90%;
@@ -630,18 +635,18 @@ footer {
   
 }
 
-.cart__total .button {
+.cart__total button {
   width: 100%;
   border: none;
   padding: .4rem .5rem;
-  background-color: var(--dark);
+  background-color: var(--yellow);
   border-radius: .3rem;
   color: var(--white);
   font-size: 1rem;
 }
 
-.cart__total .button:hover {
-  background-color: var(--yellow2);
+.cart__total button:hover {
+  background-color: var(--yellow🧮light);
 }
 
 
@@ -769,7 +774,7 @@ footer {
 
 .checkout-steps > div.active {
   background-color: transparent;
-  border-bottom: 0.2rem solid var(--yellow2);
+  border-bottom: 0.2rem solid var(--yellow);
   color: var(--yellow2);
 }
 
@@ -821,12 +826,12 @@ footer {
 
 .payment .campo__lleno {
   position: absolute;
-  top: .5px;
-  left: 1.5px;
+  top: 1px;
+  left: 1px;
   width: 22px;
   height: 22px;
   border: 1px solid --var(--darkblue);
-  background-color: var(--green);
+  background-color: var(--yellow);
   border-radius: 50%;
 }
 
@@ -857,14 +862,14 @@ footer {
   padding: .6rem 1rem;
   border: none;
   border-radius: .3rem;
-  background-color: var(--yellow2);
+  background-color: var(--yellow);
   color: var(--dark);
   margin-top: 1rem;
   font-size: 1rem;
 }
 
 .button__payment:hover {
-  background-color: #3a76f8;
+  background-color: var(--yellow🧮light);
   color: var(--white);
 }
 

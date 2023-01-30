@@ -4,13 +4,14 @@ import ProductsContext from '../context/products/productsContext'
 import RatingComponent from '../components/RatingComponent';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import CartContext from '../context/cart/cartContext';
 
 const ProductPage = () => {
 
   const { slug } = useParams();
-  const { product, loading, error, obtenerProductoFn } = useContext(ProductsContext);
 
-  console.log(product);
+  const { product, loading, error, obtenerProductoFn } = useContext(ProductsContext);
+  const { addCart } = useContext(CartContext)
 
   const [cantidad, setCantidad] = useState(1)
 
@@ -91,7 +92,7 @@ const ProductPage = () => {
                             }
                           </select>
                       </div>
-                      <button className="btn-product">Agregar al carrito</button>
+                      <button className="btn-product" onClick={() => addCart(product._id)}>Agregar al carrito</button>
                     </>
                   )
                 }

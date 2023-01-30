@@ -95,7 +95,7 @@ const OrderPage = () => {
   return (
     <div className="placeorder contenedor">
       <Helmet>
-        <title>Amazona | Show new Order</title>
+        <title>Mern Ecommerce | Mostrar Orden de Compra</title>
       </Helmet>
 
       {

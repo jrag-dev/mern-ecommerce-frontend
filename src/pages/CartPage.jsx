@@ -37,7 +37,7 @@ const CartPage = () => {
     <article className="cart-page">
 
       <Helmet>
-        <title>{`Amazona | carrito de compras`}</title>
+        <title>{`Mern Ecommerce | carrito de compras`}</title>
       </Helmet>
 
       {/* {

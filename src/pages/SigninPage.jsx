@@ -63,7 +63,7 @@ const SigninPage = () => {
   return (
     <article className="signin__page">
       <Helmet>
-        <title>Amazona | Sign In</title>
+        <title>Mern Ecommerce | Inicio de Sesión</title>
       </Helmet>
 
       <h2 className="signin__title">Iniciar Sesión</h2>

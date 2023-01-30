@@ -37,7 +37,7 @@ const PaymentMethodPage = () => {
   return (
     <div className="payment contenedor">
       <Helmet>
-        <title>Amazona | Payment Method</title>
+        <title>Mern Ecommerce | Método de PAgo</title>
       </Helmet>
 
       <CheckoutSteps step1="step1" step2="step2" step3="step3"></CheckoutSteps>
@@ -49,21 +49,23 @@ const PaymentMethodPage = () => {
       >
         <div className="campo__payment">
           <div className="campo__button">
-            <div className={paymentMethod === "PayPal" ? "campo__lleno" : "campo__vacio"}></div>
-            <input
-              type="checkbox"
-              name="paypal"
-              id="paypal"
-              value="PayPal"
-              checked={paymentMethod === 'PayPal'}
-              onChange={ (e) => setPaymentMethod(e.target.value) }
-            />
+            <div className={paymentMethod === "PayPal" ? "campo__lleno" : "campo__vacio"}>
+              <input
+                type="checkbox"
+                name="paypal"
+                id="paypal"
+                value="PayPal"
+                checked={paymentMethod === 'PayPal'}
+                onChange={ (e) => setPaymentMethod(e.target.value) }
+              />
+            </div>
           </div>
           <label htmlFor="paypal">PayPal</label>
         </div>
         <div className="campo__payment">
           <div className="campo__button">
-        <div className={paymentMethod === "Stripe" ? "campo__lleno" : "campo__vacio"}></div>
+        <div className={paymentMethod === "Stripe" ? "campo__lleno" : "campo__vacio"}>
+
             <input
               type="checkbox"
               name="stripe"
@@ -72,6 +74,7 @@ const PaymentMethodPage = () => {
               checked={paymentMethod === 'Stripe'}
               onChange={ (e) => setPaymentMethod(e.target.value) }
             />
+        </div>
           </div>
           <label htmlFor="stripe">Stripe</label>
         </div>

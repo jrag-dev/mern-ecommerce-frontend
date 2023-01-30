@@ -65,7 +65,7 @@ const SignUpPage = () => {
   return (
     <article className="signin__page">
       <Helmet>
-        <title>Amazona | Sign Up</title>
+        <title>Mern Ecommerce | Registro de Usuario</title>
       </Helmet>
 
       <h2 className="signin__title">Crear Cuenta</h2>

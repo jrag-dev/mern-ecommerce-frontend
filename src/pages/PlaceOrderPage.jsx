@@ -70,7 +70,7 @@ const PlaceOrderPage = () => {
   return (
     <div className="placeorder contenedor">
       <Helmet>
-        <title>Amazona | Payment Method</title>
+        <title>Mern Ecommerce | Método de Pago</title>
       </Helmet>
 
       <CheckoutSteps step1="step1" step2="step2" step3="step3" step4="step4"></CheckoutSteps>

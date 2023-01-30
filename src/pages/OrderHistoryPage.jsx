@@ -20,7 +20,7 @@ const OrderHistoryPage = () => {
   return (
     <div className="order-history">
       <Helmet>
-        <title>Order History</title>
+        <title>Mern Ecommerce | Historial de Ordenes</title>
       </Helmet>
 
       {

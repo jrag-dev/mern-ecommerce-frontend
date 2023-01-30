@@ -50,7 +50,7 @@ const ProfilePage = () => {
   return (
     <article className="signin__page">
       <Helmet>
-        <title>Amazona | Profile</title>
+        <title>Mern Ecommerce | Profile</title>
       </Helmet>
 
       <h2 className="signin__title">Update Profile</h2>

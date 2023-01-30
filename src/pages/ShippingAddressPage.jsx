@@ -58,7 +58,7 @@ const ShippingAddressPage = () => {
   return (
     <div className="shipping_page contenedor">
       <Helmet>
-        <title>Amazona | Shipping Address</title>
+        <title>Mern Ecommerce | Shipping Address</title>
       </Helmet>
 
       <CheckoutSteps step1="step1" step2="step2"></CheckoutSteps>
